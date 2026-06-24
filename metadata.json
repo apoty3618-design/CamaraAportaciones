@@ -1,0 +1,6 @@
+{
+  "name": "Impacto",
+  "description": "Plataforma de transparencia financiera y auditoría abierta de equipamiento técnico.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
