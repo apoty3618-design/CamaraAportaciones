@@ -85,30 +85,6 @@ export default function EquipmentDetailModal({
       ],
       justification: 'Permite capturar audio prístino de entrevistas a docentes, estudiantes y líderes comunitarios sin distorsión de viento ni ruidos ambientales en campo.'
     },
-    'eq-4': {
-      serial: 'SN-SLK-GEN3-920412',
-      supplier: 'Conectividad del Istmo S.A.',
-      community: 'Centros comunales de conectividad en Intibucá',
-      techDetails: [
-        'Antena satelital auto-orientable de alta resistencia (IP56).',
-        'Velocidades de descarga estables de hasta 150 Mbps.',
-        'Router Wi-Fi dual band con soporte para 128 dispositivos simultáneos.',
-        'Bajo consumo de energía compatible con inversores solares estándar.'
-      ],
-      justification: 'Proporciona acceso a internet robusto y estable de nivel empresarial a escuelas que de otra forma carecen por completo de infraestructura celular o por cable.'
-    },
-    'eq-5': {
-      serial: 'SN-PEL-1510-482039',
-      supplier: 'Protección Técnica S. de R.L.',
-      community: 'Logística de transporte de equipos en todo Honduras',
-      techDetails: [
-        'Polímero HPX ultraligero y de máxima resistencia contra impactos.',
-        'Anillo de sellado de neopreno estanco al agua y polvo (IP67).',
-        'Válvula de descompresión automática para viajes aéreos y altitudes.',
-        'Espuma modular precortada para ajuste milimétrico de lentes y cámaras.'
-      ],
-      justification: 'Protege las inversiones técnicas de golpes, polvo, lluvia tropical intensa y humedad extrema durante los viajes accidentados en carreteras de tierra y senderos de campo.'
-    }
   };
 
   const details = mockDetails[item.id] || {
@@ -130,7 +106,7 @@ export default function EquipmentDetailModal({
         {/* Header */}
         <div className="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-slate-50">
           <div className="flex items-center space-x-2">
-            <ShieldCheck className="h-5 w-5 text-emerald-600" />
+            <ShieldCheck className="h-5 w-5 text-sky-600" />
             <div>
               <span className="text-[10px] font-mono tracking-widest text-slate-400 font-bold uppercase block">Especificación de Auditoría</span>
               <span className="text-sm font-bold text-slate-900 font-sans">{item.id.toUpperCase()} / {details.serial}</span>
@@ -156,7 +132,7 @@ export default function EquipmentDetailModal({
             />
             <div className="absolute bottom-4 left-4">
               <span className={`inline-flex items-center space-x-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider text-white shadow-sm ${
-                isFunded ? 'bg-emerald-600' : 'bg-amber-600 animate-pulse'
+                isFunded ? 'bg-sky-600' : 'bg-amber-600 animate-pulse'
               }`}>
                 {item.status}
               </span>
@@ -185,7 +161,7 @@ export default function EquipmentDetailModal({
               <span className="text-2xl font-black text-slate-950 font-mono">{formatValue(cost)}</span>
             </div>
             {isFunded ? (
-              <span className="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-100">
+              <span className="text-[10px] font-mono font-bold text-sky-700 bg-sky-50 px-2.5 py-1 rounded-lg border border-sky-100">
                 100% FONDEADO
               </span>
             ) : (
@@ -209,7 +185,7 @@ export default function EquipmentDetailModal({
             )}
             <div className="flex justify-between">
               <span className="text-slate-400 font-medium">Contrato de Compra:</span>
-              <span className="text-emerald-700 font-bold hover:underline inline-flex items-center space-x-1 cursor-pointer">
+              <span className="text-sky-700 font-bold hover:underline inline-flex items-center space-x-1 cursor-pointer">
                 <span>CONTRATO_FIRMADO.pdf</span>
                 <ExternalLink className="h-3 w-3" />
               </span>
@@ -230,7 +206,7 @@ export default function EquipmentDetailModal({
             <ul className="space-y-2 text-slate-600">
               {details.techDetails.map((spec, idx) => (
                 <li key={idx} className="flex items-start">
-                  <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0 mt-1.5 mr-2.5"></div>
+                  <div className="h-1.5 w-1.5 rounded-full bg-sky-500 shrink-0 mt-1.5 mr-2.5"></div>
                   <span>{spec}</span>
                 </li>
               ))}
@@ -252,7 +228,7 @@ export default function EquipmentDetailModal({
                 onClose();
                 onOpenDonate(item);
               }}
-              className="flex-1 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold font-mono uppercase tracking-wider transition-all shadow-sm shadow-emerald-600/10 inline-flex items-center justify-center space-x-1 cursor-pointer"
+              className="flex-1 py-3 bg-sky-600 hover:bg-sky-700 text-white rounded-xl text-xs font-bold font-mono uppercase tracking-wider transition-all shadow-sm shadow-sky-600/10 inline-flex items-center justify-center space-x-1 cursor-pointer"
             >
               <span>Financiar Item</span>
             </button>

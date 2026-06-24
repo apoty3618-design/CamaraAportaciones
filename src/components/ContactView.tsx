@@ -43,22 +43,22 @@ export default function ContactView({
     <div className="space-y-16 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fadeIn">
       {/* View Header */}
       <div className="text-center space-y-4 max-w-3xl mx-auto">
-        <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 font-bold px-3 py-1 bg-emerald-50 rounded-full">
+        <span className="text-xs font-mono uppercase tracking-widest text-sky-700 font-bold px-3 py-1 bg-sky-100 rounded-full">
           Canal Directo
         </span>
         <h1 className="text-4xl font-bold tracking-tight text-slate-900 font-sans">
-          Hablemos de transparencia.
+          Contactanos
         </h1>
         <p className="text-slate-500 text-base leading-relaxed">
-          ¿Quieres verificar una factura de equipamiento, unirte como auditor externo o sugerir nuevos kits técnicos? Tu opinión es fundamental.
+          Si tienes equipo que busques donar es buen momento que nos puedas contactar para ayuda a los estudiantes.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
         {/* Contact Info Cards */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 space-y-4">
-            <div className="h-10 w-10 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center">
+          <div className="bg-white/85 backdrop-blur-sm border border-white/70 rounded-2xl p-6 space-y-4 shadow-sm shadow-sky-900/5">
+            <div className="h-10 w-10 bg-sky-100 text-sky-700 rounded-xl flex items-center justify-center">
               <Clock className="h-5 w-5" />
             </div>
             <div className="space-y-1">
@@ -69,8 +69,8 @@ export default function ContactView({
             </div>
           </div>
 
-          <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 space-y-4">
-            <div className="h-10 w-10 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center">
+          <div className="bg-white/85 backdrop-blur-sm border border-white/70 rounded-2xl p-6 space-y-4 shadow-sm shadow-sky-900/5">
+            <div className="h-10 w-10 bg-sky-100 text-sky-700 rounded-xl flex items-center justify-center">
               <ShieldCheck className="h-5 w-5" />
             </div>
             <div className="space-y-1">
@@ -81,8 +81,8 @@ export default function ContactView({
             </div>
           </div>
 
-          <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 space-y-4">
-            <div className="h-10 w-10 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center">
+          <div className="bg-amber-50 border border-amber-100 rounded-2xl p-6 space-y-4 shadow-sm shadow-amber-900/5">
+            <div className="h-10 w-10 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center">
               <MapPin className="h-5 w-5" />
             </div>
             <div className="space-y-1">
@@ -96,14 +96,14 @@ export default function ContactView({
 
         {/* Contact Form Screen */}
         <div className="lg:col-span-3">
-          <div className="bg-white border border-slate-100 rounded-3xl p-8 sm:p-10 shadow-xs space-y-8">
+          <div className="bg-white/85 backdrop-blur-sm border border-white/70 rounded-3xl p-8 sm:p-10 shadow-sm shadow-sky-900/5 space-y-8">
             <h3 className="text-xl font-bold text-slate-900">Formulario de Contacto</h3>
 
             {success ? (
-              <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-8 text-center space-y-3.5 flex flex-col items-center">
-                <CheckCircle className="h-12 w-12 text-emerald-600" />
-                <h4 className="font-bold text-emerald-950">¡Mensaje enviado con éxito!</h4>
-                <p className="text-xs text-emerald-800 max-w-xs leading-relaxed">
+              <div className="bg-sky-50 border border-sky-100 rounded-2xl p-8 text-center space-y-3.5 flex flex-col items-center">
+                <CheckCircle className="h-12 w-12 text-sky-600" />
+                <h4 className="font-bold text-sky-950">¡Mensaje enviado con éxito!</h4>
+                <p className="text-xs text-sky-800 max-w-xs leading-relaxed">
                   Gracias por tu mensaje. El hash de tu correspondencia ha sido registrado y un voluntario se pondrá en contacto contigo enseguida.
                 </p>
               </div>
@@ -117,7 +117,7 @@ export default function ContactView({
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="p. ej. María José Reyes"
-                    className="w-full bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none transition-all"
+                    className="w-full bg-slate-50 border border-slate-200 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none transition-all"
                   />
                 </div>
 
@@ -129,7 +129,7 @@ export default function ContactView({
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="tu@correo.com"
-                    className="w-full bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none transition-all"
+                    className="w-full bg-slate-50 border border-slate-200 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none transition-all"
                   />
                 </div>
 
@@ -141,14 +141,14 @@ export default function ContactView({
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Describe en detalle tus consultas sobre los presupuestos o proyectos..."
-                    className="w-full bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none transition-all resize-none"
+                    className="w-full bg-slate-50 border border-slate-200 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none transition-all resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white py-3.5 rounded-xl font-bold text-xs uppercase tracking-widest font-mono transition-all inline-flex items-center justify-center space-x-2 disabled:opacity-50 cursor-pointer"
+                  className="w-full bg-sky-700 hover:bg-sky-800 active:bg-sky-900 text-white py-3.5 rounded-xl font-bold text-xs uppercase tracking-widest font-mono transition-all inline-flex items-center justify-center space-x-2 disabled:opacity-50 cursor-pointer"
                 >
                   {loading ? (
                     <div className="h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -167,7 +167,7 @@ export default function ContactView({
           {receivedMessages.length > 0 && (
             <div className="mt-8 bg-slate-50 border border-slate-100 rounded-3xl p-6 sm:p-8 space-y-4">
               <div className="flex items-center space-x-2">
-                <FileText className="h-5 w-5 text-emerald-600" />
+                <FileText className="h-5 w-5 text-sky-600" />
                 <h4 className="font-bold text-slate-900 text-sm font-sans">Bandeja de Entrada In-Memory (Tus mensajes)</h4>
               </div>
               <div className="space-y-3.5 max-h-60 overflow-y-auto">

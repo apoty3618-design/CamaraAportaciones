@@ -56,7 +56,7 @@ export default function ReportView({
       {/* Toast Notification */}
       {showExportToast && (
         <div className="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-xl flex items-center space-x-3 border border-slate-800 animate-slideUp">
-          <FileSpreadsheet className="h-5 w-5 text-emerald-400" />
+          <FileSpreadsheet className="h-5 w-5 text-sky-400" />
           <div>
             <p className="text-xs font-bold">Exportación Completada</p>
             <p className="text-[10px] text-slate-400 font-mono">Formato CSV generado con hash de auditoría.</p>
@@ -66,7 +66,7 @@ export default function ReportView({
 
       {/* View Header */}
       <div className="text-center space-y-4 max-w-3xl mx-auto">
-        <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 font-bold px-3 py-1 bg-emerald-50 rounded-full">
+        <span className="text-xs font-mono uppercase tracking-widest text-sky-700 font-bold px-3 py-1 bg-sky-100 rounded-full">
           Auditoría de Cuentas
         </span>
         <h1 className="text-4xl font-bold tracking-tight text-slate-900 font-sans">
@@ -78,7 +78,7 @@ export default function ReportView({
       </div>
 
       {/* Monthly Goal Card */}
-      <div className="bg-white border border-slate-100 rounded-3xl p-8 sm:p-10 shadow-xs space-y-6">
+      <div className="bg-white/85 backdrop-blur-sm border border-white/70 rounded-3xl p-8 sm:p-10 shadow-sm shadow-sky-900/5 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="space-y-1">
             <span className="text-xs font-mono uppercase tracking-widest text-slate-400 font-bold">ESTADO DE CAPTACIÓN</span>
@@ -86,18 +86,18 @@ export default function ReportView({
               Objetivo Mensual: {formatValue(totalDonated)} de {formatValue(goalAmount)}
             </h3>
           </div>
-          <span className="text-3xl font-mono font-black text-emerald-600 self-start sm:self-center">
+          <span className="text-3xl font-mono font-black text-sky-700 self-start sm:self-center">
             {percentage}%
           </span>
         </div>
 
         {/* Progress Bar */}
-        <div className="h-4 bg-slate-100 rounded-full overflow-hidden relative">
+        <div className="h-4 bg-sky-100 rounded-full overflow-hidden relative">
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: `${percentage}%` }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            className="h-full bg-linear-to-r from-emerald-500 to-teal-500 rounded-full"
+            className="h-full bg-linear-to-r from-sky-600 to-cyan-400 rounded-full"
           ></motion.div>
         </div>
 
@@ -118,7 +118,7 @@ export default function ReportView({
       </div>
 
       {/* Expense Breakdown & Table Section */}
-      <div className="bg-white border border-slate-100 rounded-3xl p-8 shadow-xs space-y-6">
+      <div className="bg-white/85 backdrop-blur-sm border border-white/70 rounded-3xl p-8 shadow-sm shadow-sky-900/5 space-y-6">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           <div className="space-y-1">
             <h3 className="text-xl font-bold text-slate-900">Desglose de Gastos</h3>
@@ -134,7 +134,7 @@ export default function ReportView({
                 placeholder="Buscar transacción..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 pr-4 py-2 border border-slate-200 rounded-xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 w-full sm:w-64 transition-all"
+                className="pl-10 pr-4 py-2 border border-slate-200 rounded-xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 w-full sm:w-64 transition-all"
               />
             </div>
 
@@ -157,7 +157,7 @@ export default function ReportView({
               onClick={() => setSelectedCategory(cat)}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
                 selectedCategory === cat
-                  ? 'bg-emerald-50 text-emerald-700 border-emerald-200 font-bold'
+                  ? 'bg-sky-100 text-sky-800 border-sky-200 font-bold'
                   : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
               }`}
             >
@@ -196,7 +196,7 @@ export default function ReportView({
                     <td className="py-4 px-6 text-center">
                       <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide ${
                         tx.status === 'Adquirido'
-                          ? 'bg-emerald-50 text-emerald-700 border border-emerald-100'
+                          ? 'bg-sky-50 text-sky-700 border border-sky-100'
                           : 'bg-amber-50 text-amber-700 border border-amber-100'
                       }`}>
                         {tx.status}
@@ -236,14 +236,14 @@ export default function ReportView({
           />
           <div className="absolute inset-0 bg-linear-to-t from-slate-950/60 to-transparent"></div>
           <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
-            <p className="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">REGISTRO FÍSICO</p>
+            <p className="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold">REGISTRO FÍSICO</p>
             <p className="text-sm font-semibold leading-tight">Archivo Centralizado de Contratos e Importaciones</p>
           </div>
         </div>
 
         <div className="space-y-8">
           <div className="space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 font-bold">ADMINISTRACIÓN IMPECABLE</span>
+            <span className="text-xs font-mono uppercase tracking-widest text-sky-600 font-bold">ADMINISTRACIÓN IMPECABLE</span>
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 leading-tight">
               Transparencia Radical
             </h2>
@@ -254,17 +254,17 @@ export default function ReportView({
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
             <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-center">
-              <BadgePercent className="h-6 w-6 text-emerald-600 mx-auto mb-2" />
+              <BadgePercent className="h-6 w-6 text-sky-600 mx-auto mb-2" />
               <span className="block text-lg font-black text-slate-900 font-mono">94%</span>
               <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wide block">Eficiencia</span>
             </div>
             <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-center">
-              <HeartHandshake className="h-6 w-6 text-emerald-600 mx-auto mb-2" />
+              <HeartHandshake className="h-6 w-6 text-sky-600 mx-auto mb-2" />
               <span className="block text-lg font-black text-slate-900 font-mono">$0.00</span>
               <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wide block">Marketing</span>
             </div>
             <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-center">
-              <ShieldAlert className="h-6 w-6 text-emerald-600 mx-auto mb-2" />
+              <ShieldAlert className="h-6 w-6 text-sky-600 mx-auto mb-2" />
               <span className="block text-lg font-black text-slate-900 font-mono">24/7</span>
               <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wide block">Auditoría</span>
             </div>

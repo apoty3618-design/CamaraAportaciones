@@ -6,6 +6,22 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(14, 165, 233, 0.28), transparent 28rem),
+    radial-gradient(circle at 88% 12%, rgba(245, 158, 11, 0.24), transparent 24rem),
+    radial-gradient(circle at 50% 95%, rgba(34, 211, 238, 0.18), transparent 28rem),
+    linear-gradient(135deg, #dbeafe 0%, #f0f9ff 42%, #fef3c7 100%);
+  background-attachment: fixed;
+}
+
 @layer utilities {
   .animate-fadeIn {
     animation: fadeIn 0.4s ease-out forwards;

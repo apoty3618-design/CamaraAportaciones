@@ -1,6 +1,6 @@
 {
-  "name": "Impacto",
-  "description": "Plataforma de transparencia financiera y auditoría abierta de equipamiento técnico.",
+  "name": "Instituto Gubernamental Alvaro Contreras",
+  "description": "Plataforma de aportes para equipo audiovisual estudiantil.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

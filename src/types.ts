@@ -9,7 +9,7 @@ export interface EquipmentItem {
   id: string;
   nameEn: string;
   nameEs: string;
-  nameHnlEs: string; // e.g. "DJI Mic Mini" vs "Equipo de Audio"
+  nameHnlEs: string;
   category: string;
   imageUrl: string;
   costUSD: number;

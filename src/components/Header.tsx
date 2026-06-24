@@ -44,20 +44,20 @@ export default function Header({
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-colors duration-200">
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-sky-100 shadow-sm shadow-sky-900/5 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setCurrentTab('inicio')}>
-            <div className="p-2.5 bg-emerald-50 rounded-xl text-emerald-600 transition-all hover:bg-emerald-100">
+            <div className="p-2.5 bg-sky-100 rounded-xl text-sky-700 transition-all hover:bg-cyan-100">
               <Landmark className="h-6 w-6" />
             </div>
             <div>
               <span className="text-xl font-bold font-sans tracking-tight text-slate-900 block leading-none">
-                IMPACTO
+                Instituto Gubernamental Alvaro Contreras
               </span>
               <span className="text-[10px] text-slate-400 font-mono tracking-wider uppercase block mt-1">
-                TRANSPARENCIA RADICAL
+                APORTES ESTUDIANTILES
               </span>
             </div>
           </div>
@@ -70,8 +70,8 @@ export default function Header({
                 onClick={() => setCurrentTab(item.id)}
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                   currentTab === item.id
-                    ? 'text-emerald-700 bg-emerald-50'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                    ? 'text-sky-800 bg-sky-100'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-sky-50'
                 }`}
               >
                 {item.label}
@@ -82,7 +82,7 @@ export default function Header({
           {/* Controls & CTA */}
           <div className="hidden md:flex items-center space-x-4">
             {/* Currency Selector Toggle */}
-            <div className="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200/50">
+            <div className="flex items-center bg-sky-50 p-1 rounded-xl border border-sky-100">
               <button
                 onClick={() => setCurrency('USD')}
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 ${
@@ -106,15 +106,15 @@ export default function Header({
             </div>
 
             {/* Quick Status Pill */}
-            <div className="hidden lg:flex items-center space-x-1.5 px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-lg text-xs font-mono text-slate-500">
-              <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
+            <div className="hidden lg:flex items-center space-x-1.5 px-3 py-1.5 bg-amber-50 border border-amber-100 rounded-lg text-xs font-mono text-amber-800">
+              <div className="h-2 w-2 rounded-full bg-amber-500 animate-pulse"></div>
               <span>Meta: {formatValue(totalDonated)} / {formatValue(goalAmount)}</span>
             </div>
 
             {/* Contribute CTA Button */}
             <button
               onClick={onOpenDonate}
-              className="inline-flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 transform hover:-translate-y-0.5 shadow-sm shadow-emerald-600/10 active:translate-y-0"
+              className="inline-flex items-center space-x-2 bg-sky-700 hover:bg-sky-800 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 transform hover:-translate-y-0.5 shadow-sm shadow-sky-600/20 active:translate-y-0"
             >
               <Heart className="h-4 w-4 fill-current" />
               <span>Contribuir</span>
@@ -124,7 +124,7 @@ export default function Header({
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-3">
             {/* Mobile Currency Selector */}
-            <div className="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200/50 text-[10px]">
+            <div className="flex items-center bg-sky-50 p-0.5 rounded-lg border border-sky-100 text-[10px]">
               <button
                 onClick={() => setCurrency('USD')}
                 className={`px-2 py-1 rounded text-xs font-bold ${
@@ -165,8 +165,8 @@ export default function Header({
               }}
               className={`w-full text-left px-4 py-3 rounded-xl text-base font-medium transition-all ${
                 currentTab === item.id
-                  ? 'text-emerald-700 bg-emerald-50'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                  ? 'text-sky-800 bg-sky-100'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-sky-50'
               }`}
             >
               {item.label}
@@ -181,7 +181,7 @@ export default function Header({
                 setIsOpen(false);
                 onOpenDonate();
               }}
-              className="w-full inline-flex items-center justify-center space-x-2 bg-emerald-600 text-white py-3 rounded-xl text-base font-semibold transition-all hover:bg-emerald-700"
+              className="w-full inline-flex items-center justify-center space-x-2 bg-sky-700 text-white py-3 rounded-xl text-base font-semibold transition-all hover:bg-sky-800"
             >
               <Heart className="h-5 w-5 fill-current" />
               <span>Contribuir</span>

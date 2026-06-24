@@ -48,7 +48,8 @@ export default function DonationModal({
       
       if (selectedEquipment) {
         const cost = currency === 'USD' ? selectedEquipment.costUSD : selectedEquipment.costHNL;
-        setAmount(cost.toString());
+        const funded = currency === 'USD' ? selectedEquipment.fundedAmountUSD : selectedEquipment.fundedAmountHNL;
+        setAmount(Math.max(cost - funded, 0).toString());
       } else {
         setAmount(currency === 'USD' ? '50' : '1000');
       }
@@ -129,7 +130,7 @@ export default function DonationModal({
         {/* Header */}
         <div className="bg-slate-50 border-b border-slate-100 px-6 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Heart className="h-5 w-5 text-emerald-600 fill-emerald-50" />
+            <Heart className="h-5 w-5 text-sky-600 fill-sky-50" />
             <h3 className="font-bold text-slate-900 font-sans">
               {selectedEquipment ? 'Financiar Equipamiento' : 'Realizar Contribución'}
             </h3>
@@ -147,15 +148,15 @@ export default function DonationModal({
           {step === 'form' && (
             <form onSubmit={handleDonate} className="space-y-5">
               {selectedEquipment && (
-                <div className="bg-emerald-50/50 border border-emerald-100 p-4 rounded-2xl flex items-center space-x-3 text-xs">
-                  <div className="p-2 bg-emerald-100 text-emerald-700 rounded-xl">
+                <div className="bg-sky-50/50 border border-sky-100 p-4 rounded-2xl flex items-center space-x-3 text-xs">
+                  <div className="p-2 bg-sky-100 text-sky-700 rounded-xl">
                     <Landmark className="h-4 w-4" />
                   </div>
                   <div>
-                    <p className="font-bold text-emerald-950">
+                    <p className="font-bold text-sky-950">
                       Estás financiando: {currency === 'USD' ? selectedEquipment.nameEs : selectedEquipment.nameHnlEs}
                     </p>
-                    <p className="text-emerald-700 font-mono mt-0.5">
+                    <p className="text-sky-700 font-mono mt-0.5">
                       Costo del item: {formatValue(currency === 'USD' ? selectedEquipment.costUSD : selectedEquipment.costHNL)}
                     </p>
                   </div>
@@ -172,11 +173,10 @@ export default function DonationModal({
                   <input
                     type="number"
                     required
-                    disabled={!!selectedEquipment}
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
                     placeholder="0.00"
-                    className="w-full bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-2xl pl-8 pr-4 py-4 text-xl font-bold text-slate-900 font-mono focus:outline-none transition-all"
+                    className="w-full bg-slate-50 border border-slate-200 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 rounded-2xl pl-8 pr-4 py-4 text-xl font-bold text-slate-900 font-mono focus:outline-none transition-all"
                   />
                 </div>
 
@@ -210,7 +210,7 @@ export default function DonationModal({
                       type="checkbox"
                       checked={isAnonymous}
                       onChange={(e) => setIsAnonymous(e.target.checked)}
-                      className="rounded border-slate-300 text-emerald-600 focus:ring-emerald-500 h-3.5 w-3.5"
+                      className="rounded border-slate-300 text-sky-600 focus:ring-sky-500 h-3.5 w-3.5"
                     />
                     <span>Aporte Anónimo</span>
                   </label>
@@ -225,7 +225,7 @@ export default function DonationModal({
                         value={donorName}
                         onChange={(e) => setDonorName(e.target.value)}
                         placeholder="Nombre Completo"
-                        className="w-full bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl px-3.5 py-3 text-xs text-slate-800 placeholder-slate-400 focus:outline-none transition-all"
+                        className="w-full bg-slate-50 border border-slate-200 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 rounded-xl px-3.5 py-3 text-xs text-slate-800 placeholder-slate-400 focus:outline-none transition-all"
                       />
                     </div>
                     <div>
@@ -235,7 +235,7 @@ export default function DonationModal({
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Correo Electrónico"
-                        className="w-full bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl px-3.5 py-3 text-xs text-slate-800 placeholder-slate-400 focus:outline-none transition-all"
+                        className="w-full bg-slate-50 border border-slate-200 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 rounded-xl px-3.5 py-3 text-xs text-slate-800 placeholder-slate-400 focus:outline-none transition-all"
                       />
                     </div>
                   </div>
@@ -247,7 +247,7 @@ export default function DonationModal({
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Escribe un mensaje de apoyo para la comunidad (opcional)..."
-                    className="w-full bg-slate-50 border border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl px-3.5 py-3 text-xs text-slate-800 placeholder-slate-400 focus:outline-none transition-all resize-none"
+                    className="w-full bg-slate-50 border border-slate-200 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 rounded-xl px-3.5 py-3 text-xs text-slate-800 placeholder-slate-400 focus:outline-none transition-all resize-none"
                   />
                 </div>
               </div>
@@ -263,7 +263,7 @@ export default function DonationModal({
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-all uppercase tracking-wider font-mono shadow-md shadow-emerald-600/10 inline-flex items-center justify-center space-x-1.5 cursor-pointer"
+                  className="flex-1 py-3 bg-sky-600 hover:bg-sky-700 text-white rounded-xl text-xs font-bold transition-all uppercase tracking-wider font-mono shadow-md shadow-sky-600/10 inline-flex items-center justify-center space-x-1.5 cursor-pointer"
                 >
                   <Sparkles className="h-4 w-4" />
                   <span>Proceder</span>
@@ -275,8 +275,8 @@ export default function DonationModal({
           {step === 'loading' && (
             <div className="py-12 flex flex-col items-center justify-center text-center space-y-6">
               <div className="relative">
-                <div className="h-16 w-16 border-4 border-emerald-100 border-t-emerald-600 rounded-full animate-spin"></div>
-                <div className="absolute inset-0 flex items-center justify-center text-emerald-600">
+                <div className="h-16 w-16 border-4 border-sky-100 border-t-sky-600 rounded-full animate-spin"></div>
+                <div className="absolute inset-0 flex items-center justify-center text-sky-600">
                   <ShieldCheck className="h-6 w-6" />
                 </div>
               </div>
@@ -289,7 +289,7 @@ export default function DonationModal({
 
           {step === 'success' && (
             <div className="py-8 flex flex-col items-center justify-center text-center space-y-6">
-              <div className="h-16 w-16 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center border border-emerald-100">
+              <div className="h-16 w-16 bg-sky-50 text-sky-600 rounded-full flex items-center justify-center border border-sky-100">
                 <CheckCircle2 className="h-10 w-10" />
               </div>
               

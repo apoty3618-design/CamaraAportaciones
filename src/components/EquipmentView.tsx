@@ -35,7 +35,7 @@ export default function EquipmentView({
     <div className="space-y-16 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* View Header */}
       <div className="text-center space-y-4 max-w-3xl mx-auto">
-        <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 font-bold px-3 py-1 bg-emerald-50 rounded-full">
+        <span className="text-xs font-mono uppercase tracking-widest text-sky-700 font-bold px-3 py-1 bg-sky-100 rounded-full">
           Inventario Abierto
         </span>
         <h1 className="text-4xl font-bold tracking-tight text-slate-900 font-sans">
@@ -58,10 +58,10 @@ export default function EquipmentView({
             <motion.div
               key={item.id}
               whileHover={{ y: -4 }}
-              className="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
+              className="bg-white/85 backdrop-blur-sm border border-white/70 rounded-3xl overflow-hidden shadow-sm shadow-sky-900/5 hover:shadow-lg hover:shadow-sky-900/10 transition-all flex flex-col justify-between"
             >
               {/* Product Image Panel */}
-              <div className="relative aspect-video bg-slate-50 overflow-hidden group">
+              <div className="relative aspect-video bg-sky-50 overflow-hidden group">
                 <img
                   src={item.imageUrl}
                   alt={name}
@@ -73,7 +73,7 @@ export default function EquipmentView({
                 <div className="absolute top-4 right-4">
                   <span className={`inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-bold shadow-sm ${
                     isFunded
-                      ? 'bg-emerald-500 text-white'
+                      ? 'bg-sky-600 text-white'
                       : 'bg-amber-500 text-white animate-pulse'
                   }`}>
                     {isFunded ? (
@@ -106,7 +106,7 @@ export default function EquipmentView({
                 </div>
 
                 {/* Costs and Actions */}
-                <div className="pt-4 border-t border-slate-50 space-y-4">
+                <div className="pt-4 border-t border-sky-50 space-y-4">
                   <div className="flex items-baseline justify-between">
                     <span className="text-xs font-mono uppercase tracking-wider text-slate-400">COSTO ESTIMADO</span>
                     <span className="text-xl font-bold text-slate-950 font-mono">
@@ -117,7 +117,7 @@ export default function EquipmentView({
                   <div className="flex gap-2">
                     <button
                       onClick={() => onViewEquipmentDetails(item)}
-                      className="flex-1 inline-flex items-center justify-center space-x-1 bg-slate-50 hover:bg-slate-100 text-slate-700 py-2.5 rounded-xl text-xs font-bold transition-all border border-slate-100"
+                      className="flex-1 inline-flex items-center justify-center space-x-1 bg-sky-50 hover:bg-sky-100 text-sky-800 py-2.5 rounded-xl text-xs font-bold transition-all border border-sky-100"
                     >
                       <Eye className="h-3.5 w-3.5" />
                       <span>Detalles</span>
@@ -125,7 +125,7 @@ export default function EquipmentView({
                     {!isFunded && (
                       <button
                         onClick={() => onOpenDonateForEquipment(item)}
-                        className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 rounded-xl text-xs font-bold transition-all inline-flex items-center justify-center space-x-1 shadow-xs shadow-emerald-600/10"
+                        className="flex-1 bg-sky-700 hover:bg-sky-800 text-white py-2.5 rounded-xl text-xs font-bold transition-all inline-flex items-center justify-center space-x-1 shadow-xs shadow-sky-600/20"
                       >
                         <Sparkles className="h-3.5 w-3.5" />
                         <span>Financiar</span>
@@ -139,9 +139,9 @@ export default function EquipmentView({
         })}
 
         {/* Dotted Reserve Fund Card */}
-        <div className="bg-slate-50/50 border-2 border-dashed border-slate-200 rounded-3xl p-8 flex flex-col justify-between text-center min-h-[350px]">
+        <div className="bg-amber-50/70 border-2 border-dashed border-amber-200 rounded-3xl p-8 flex flex-col justify-between text-center min-h-[350px]">
           <div className="space-y-4 my-auto">
-            <div className="h-12 w-12 bg-slate-100 rounded-full flex items-center justify-center mx-auto text-slate-500">
+            <div className="h-12 w-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto text-amber-700">
               <ShieldCheck className="h-6 w-6" />
             </div>
             <div className="space-y-1">
@@ -154,7 +154,7 @@ export default function EquipmentView({
 
           <button
             onClick={onOpenDonate}
-            className="w-full py-3 bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-700 text-xs font-bold rounded-xl transition-all border border-slate-200 hover:border-emerald-200"
+            className="w-full py-3 bg-white hover:bg-sky-700 text-slate-700 hover:text-white text-xs font-bold rounded-xl transition-all border border-amber-200 hover:border-sky-700"
           >
             Confirmar Contribución
           </button>
@@ -162,11 +162,11 @@ export default function EquipmentView({
       </div>
 
       {/* Transparency Guarantee Banner */}
-      <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
-        <div className="absolute top-0 right-0 transform translate-x-12 -translate-y-12 h-48 w-48 bg-emerald-500/10 rounded-full blur-2xl"></div>
+      <div className="bg-indigo-950 text-white rounded-3xl p-8 sm:p-10 shadow-lg shadow-indigo-950/20 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#0ea5e966,transparent_34%),radial-gradient(circle_at_bottom_left,#f59e0b33,transparent_30%)]"></div>
         
         <div className="space-y-2 max-w-2xl relative z-10">
-          <div className="inline-flex items-center space-x-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full text-[10px] font-mono tracking-widest uppercase font-bold">
+          <div className="inline-flex items-center space-x-1 bg-white/10 border border-white/15 text-cyan-200 px-3 py-1 rounded-full text-[10px] font-mono tracking-widest uppercase font-bold">
             Garantía de Transparencia
           </div>
           <h3 className="text-xl font-bold font-sans">Facturación y Trazabilidad</h3>
@@ -180,7 +180,7 @@ export default function EquipmentView({
           className="bg-white hover:bg-slate-50 text-slate-900 px-6 py-3 rounded-xl text-xs font-bold inline-flex items-center space-x-2 transition-all relative z-10 shrink-0 self-start md:self-center"
         >
           <span>Auditar Contratos</span>
-          <ArrowRight className="h-4 w-4 text-emerald-600" />
+          <ArrowRight className="h-4 w-4 text-sky-600" />
         </button>
       </div>
     </div>
