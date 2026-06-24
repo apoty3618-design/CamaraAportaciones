@@ -5,6 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    base: '/CamaraAportaciones/', // <- AGREGA ESTA LÍNEA EXACTA
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
@@ -14,7 +15,7 @@ export default defineConfig(() => {
     server: {
       hmr: process.env.DISABLE_HMR !== 'true',
       watch: process.env.DISABLE_HMR === 'true' ? null : {
-        usePolling: true // <- Esto obliga a Windows a detectar cuando guardas
+        usePolling: true
       },
     },
   };
